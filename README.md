@@ -3,7 +3,7 @@
 **Repository:** https://github.com/letsgo0226/Code
 
 ## Body program
-- `Code.sh` — Single-line fair-diagonal ATGC reversible TM enumerator.
+- `Code.sh` — Compact single-line fair-diagonal ATGC reversible TM enumerator.
   Generates n-state binary machines structurally, runs them under a fair diagonal schedule
   (round r examines machines of size ≤ r for r steps), and classifies each as
   FIX (fixed-point configuration), CLOSED (undefined transition), or OPEN.
