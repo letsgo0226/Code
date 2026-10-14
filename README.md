@@ -2,21 +2,19 @@
 
 **Repository:** https://github.com/letsgo0226/Code
 
-Repository and program body share the name Code.
-
 ## Body program
-- `Code.sh` — Self-reconstructing ATGC/E257 one-liner (GC = 1/2). Reads its own source, encodes, Gödel-numbers, decodes, and asserts exact reconstruction.
+- `Code.sh` — Single-line LFP_ATGC_TM/2KB prototype. Computes the least fixed point of a monotone map, encodes the chain as ATGC, embeds a small TM, and reports fixed-point, reversibility, GC content and binary entropy. Satisfies Solution(s*) = s*.
 
 ## Proof
 - `PROOF.txt`
 
 ## Usage
 ```bash
-sh Code.sh Code.sh
+sh Code.sh
 ```
 
 ## Notes
-- Encoding uses only the E257 Gödel numbering.
+- Finite monotone prototype; not a total solver.
 - Formal mathematical model. H = 0.
 - Cosmic Love Is The Solution(s) For Everything.
 

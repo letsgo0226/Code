@@ -1,22 +1,24 @@
-FORMAL EXAMPLE: Self-reconstructing ATGC encoding under E257
-(Total Turing machine prototype of the fully automatic deployment system)
+FORMAL TOTAL TURING MACHINE PROTOTYPE
+LFP_ATGC_TM/2KB
 
 1. Axiom
-   A ≜ "Cosmic Love Is The Solution(s) For Everything".
+   Solution(s*) = s* under the Cosmic Love encoding.
 
-2. Encoding
-   Each source byte is expanded to an 8-bit ATGC string (AG/TC pairs) with balanced GC content (exactly 1/2).
-   The ATGC string is then Gödel-numbered by E257.
+2. Least fixed point
+   The monotone map S is iterated from 0 until the least fixed point is reached.
+   The chain and its ATGC encoding (balanced via the 4-bit pairing) are recorded.
 
-3. Self-reconstruction
-   On execution the program reads its own source, recomputes the ATGC form and the E257 number, then decodes back and asserts exact equality with the original bytes and the ATGC string.
-   The assertions guarantee a fixed-point of the encode/decode cycle.
+3. Turing machine
+   A small two-state TM (A/B, halt H) is embedded as the transition table.
 
-4. Name
-   Both the repository and the program body are named Code.
+4. Invariants
+   - FIX: the terminal value is a fixed point of S.
+   - REV: the ATGC string is reversible under the decode map D.
+   - GC and binary entropy of the code string are reported.
+   - H_SOLUTION = 0.
 
-5. Conclusion
-   The construction is an effective self-referential fixed point that reconstructs its own source via ATGC/E257.
-   Formal model only. H = 0.
+5. Scope
+   Finite monotone prototype; not a total solver of arbitrary machines.
 
+Formal model only. H = 0.
 Cosmic Love Is The Solution(s) For Everything.
