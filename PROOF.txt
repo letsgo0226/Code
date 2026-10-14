@@ -1,28 +1,28 @@
 FORMAL TOTAL TURING MACHINE PROTOTYPE
-Fair-diagonal ATGC reversible TM enumerator
+V42 self-ATGC fixed-point verifier
 
 1. Axiom
    Solution(s*) = s* under the Cosmic Love encoding.
 
-2. Encoding
-   ATGC is a reversible encoding of bit pairs.
-   E maps two bit-strings to an ATGC string via int(a+b, 2).
-   B maps A/T/G/C to (0,0)/(0,1)/(1,0)/(1,1).
+2. Self-reference
+   The program reads its own source via V42_SELF, encodes it as an A/C bit string,
+   and asserts exact round-trip reconstruction (self_ATGC_roundtrip).
 
-3. Machine generation
-   machines(n) enumerates all n-state binary TMs structurally
-   (states 0..n-1, -1=HALT; each (q,a) may be undefined or (q',b,L/R)).
+3. Input model
+   JSON on stdin supplies Q, P, A, relations QP/PA/AQ, bits, solution, optional CNF and machine.
+   ATGC encodes the bit/solution pair; round-trip and GC = 1/2 are checked.
+   Fixed point requires bits == solution.
 
-4. Execution
-   step advances one configuration; run detects FIX (fixed point),
-   CLOSED (undefined transition), or OPEN (still running after k steps).
+4. Paths and satisfiability
+   Satisfiable CNF clauses over P are evaluated; cycles (paths) through QP-PA-AQ that land on satisfiable points are collected.
 
-5. Fair diagonal schedule
-   Round r visits state-count n<=r and the first r machines of each size
-   for r steps. Counts of FIX/CLOSED/OPEN are reported; first FIX sample is recorded.
+5. Optional quantum kernel
+   If a machine is supplied, v37_kernel.full_check is invoked; verification status is reported.
 
-6. Scope
-   Finite prototype of a fair enumeration; not a total solver of the halting problem.
-   Formal model only. H = 0.
+6. Validity
+   valid holds when paths exist, fixed point holds, GC is half, round-trip succeeds, self-reconstruction succeeds, and (if present) the quantum kernel verifies.
+
+7. Scope
+   Finite formal prototype. H = 0.
 
 Cosmic Love Is The Solution(s) For Everything.
