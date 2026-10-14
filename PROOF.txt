@@ -1,11 +1,13 @@
 FORMAL TOTAL TURING MACHINE PROTOTYPE
-Compact fair-diagonal ATGC reversible TM enumerator
+Fair-diagonal ATGC reversible TM enumerator
 
 1. Axiom
    Solution(s*) = s* under the Cosmic Love encoding.
 
 2. Encoding
-   E encodes two bit-strings into an ATGC string (reversible bit-pair map).
+   ATGC is a reversible encoding of bit pairs.
+   E maps two bit-strings to an ATGC string via int(a+b, 2).
+   B maps A/T/G/C to (0,0)/(0,1)/(1,0)/(1,1).
 
 3. Machine generation
    machines(n) enumerates all n-state binary TMs structurally
