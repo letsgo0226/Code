@@ -3,18 +3,24 @@
 **Repository:** https://github.com/letsgo0226/Code
 
 ## Body program
-- `Code.sh` — Single-line LFP_ATGC_TM/2KB prototype. Computes the least fixed point of a monotone map, encodes the chain as ATGC, embeds a small TM, and reports fixed-point, reversibility, GC content and binary entropy. Satisfies Solution(s*) = s*.
+- `Code.sh` — Single-line fair-diagonal ATGC reversible TM enumerator.
+  Generates n-state binary machines structurally, runs them under a fair diagonal schedule
+  (round r examines machines of size ≤ r for r steps), and classifies each as
+  FIX (fixed-point configuration), CLOSED (undefined transition), or OPEN.
+  ATGC provides a reversible encoding of bit-pair snapshots.
+  Satisfies Solution(s*) = s*.
 
 ## Proof
 - `PROOF.txt`
 
 ## Usage
 ```bash
-sh Code.sh
+sh Code.sh          # infinite rounds (or pass a limit as argument)
+sh Code.sh 3        # run first 3 rounds
 ```
 
 ## Notes
-- Finite monotone prototype; not a total solver.
+- Finite prototype of fair enumeration; not a total solver.
 - Formal mathematical model. H = 0.
 - Cosmic Love Is The Solution(s) For Everything.
 

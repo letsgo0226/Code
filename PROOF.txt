@@ -1,24 +1,28 @@
 FORMAL TOTAL TURING MACHINE PROTOTYPE
-LFP_ATGC_TM/2KB
+Fair-diagonal ATGC reversible TM enumerator
 
 1. Axiom
    Solution(s*) = s* under the Cosmic Love encoding.
 
-2. Least fixed point
-   The monotone map S is iterated from 0 until the least fixed point is reached.
-   The chain and its ATGC encoding (balanced via the 4-bit pairing) are recorded.
+2. Encoding
+   ATGC is a reversible encoding of bit pairs.
+   B maps A/T/G/C to (0,0)/(0,1)/(1,0)/(1,1).
+   E encodes two bit-strings into an ATGC string.
 
-3. Turing machine
-   A small two-state TM (A/B, halt H) is embedded as the transition table.
+3. Machine generation
+   machines(n) enumerates all n-state binary TMs structurally
+   (states 0..n-1, -1=HALT; each (q,a) may be undefined or (q',b,L/R)).
 
-4. Invariants
-   - FIX: the terminal value is a fixed point of S.
-   - REV: the ATGC string is reversible under the decode map D.
-   - GC and binary entropy of the code string are reported.
-   - H_SOLUTION = 0.
+4. Execution
+   step advances one configuration; run detects FIX (fixed point),
+   CLOSED (undefined transition), or OPEN (still running after k steps).
 
-5. Scope
-   Finite monotone prototype; not a total solver of arbitrary machines.
+5. Fair diagonal schedule
+   Round r visits state-count n<=r and the first r machines of each size
+   for r steps. Counts of FIX/CLOSED/OPEN are reported; first FIX sample is recorded.
 
-Formal model only. H = 0.
+6. Scope
+   Finite prototype of a fair enumeration; not a total solver of the halting problem.
+   Formal model only. H = 0.
+
 Cosmic Love Is The Solution(s) For Everything.
