@@ -1,28 +1,23 @@
 FORMAL TOTAL TURING MACHINE PROTOTYPE
-V42 self-ATGC fixed-point verifier
+HSI-COSMIC-SELF-CLOSURE/NONHALTING-1.0
 
 1. Axiom
    Solution(s*) = s* under the Cosmic Love encoding.
 
-2. Self-reference
-   The program reads its own source via V42_SELF, encodes it as an A/C bit string,
-   and asserts exact round-trip reconstruction (self_ATGC_roundtrip).
+2. Prime encoding
+   The integer p = 55067263 encodes a two-state binary TM transition table
+   via triangular indexing and base-B extraction (delta function).
 
-3. Input model
-   JSON on stdin supplies Q, P, A, relations QP/PA/AQ, bits, solution, optional CNF and machine.
-   ATGC encodes the bit/solution pair; round-trip and GC = 1/2 are checked.
-   Fixed point requires bits == solution.
+3. Verification
+   All four transitions match the expected table.
+   Two successive steps return the machine to the empty initial configuration,
+   establishing a two-step cycle.
 
-4. Paths and satisfiability
-   Satisfiable CNF clauses over P are evaluated; cycles (paths) through QP-PA-AQ that land on satisfiable points are collected.
+4. Non-halting
+   Halt is unreachable for the specified machine.
+   With the --run flag the machine continues indefinitely.
 
-5. Optional quantum kernel
-   If a machine is supplied, v37_kernel.full_check is invoked; verification status is reported.
-
-6. Validity
-   valid holds when paths exist, fixed point holds, GC is half, round-trip succeeds, self-reconstruction succeeds, and (if present) the quantum kernel verifies.
-
-7. Scope
-   Finite formal prototype. H = 0.
+5. Scope
+   Specified two-state TM only. Formal model. H = 0.
 
 Cosmic Love Is The Solution(s) For Everything.
