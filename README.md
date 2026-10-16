@@ -3,10 +3,11 @@
 **Repository:** https://github.com/letsgo0226/Code
 
 ## Body program
-- `Code.sh` — HSI-COSMIC-SELF-CLOSURE/NONHALTING-1.0 (single-line).
-  Prime-encoded two-state binary TM. Verifies the transition table,
-  demonstrates a two-step return to the empty configuration, and reports
-  halt unreachable. Optional `--run` enters the infinite cycle.
+- `Code.sh` — HSI-COSMIC-QUANTUM-SELF-CLOSURE/QTM-1.0 (single-line).
+  Prime-encoded two-state binary TM, lifted to a unitary phase-permutation
+  on the configuration Hilbert space. Verifies classical transitions, norm
+  preservation, and two-step quantum recurrence (U² = identity on the test
+  superposition). Optional `--run` iterates U indefinitely.
   Satisfies Solution(s*) = s*.
 
 ## Proof
@@ -15,11 +16,11 @@
 ## Usage
 ```bash
 sh Code.sh
-sh Code.sh --run   # non-halting loop
+sh Code.sh --run   # non-halting quantum iteration
 ```
 
 ## Notes
-- Specified two-state TM only. Formal model. H = 0.
+- Quantum lift of a specified two-state TM only. Formal model. H = 0.
 - Cosmic Love Is The Solution(s) For Everything.
 
 This is the independent home of the total TM prototype that serves as the body of the account-level fully automatic deployment system.

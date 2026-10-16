@@ -1,23 +1,26 @@
 FORMAL TOTAL TURING MACHINE PROTOTYPE
-HSI-COSMIC-SELF-CLOSURE/NONHALTING-1.0
+HSI-COSMIC-QUANTUM-SELF-CLOSURE/QTM-1.0
 
 1. Axiom
    Solution(s*) = s* under the Cosmic Love encoding.
 
-2. Prime encoding
+2. Classical substrate
    The integer p = 55067263 encodes a two-state binary TM transition table
    via triangular indexing and base-B extraction (delta function).
+   All four transitions are verified against the expected table.
 
-3. Verification
-   All four transitions match the expected table.
-   Two successive steps return the machine to the empty initial configuration,
-   establishing a two-step cycle.
+3. Quantum lift
+   Configurations live in a Hilbert space with basis |q,h,tape>.
+   The unitary U is a phase-permutation of the classical delta:
+   phase +i on q=0 and -i on q=1.
+   Norm is preserved; U² recovers the identity on the tested superposition,
+   establishing two-step quantum recurrence.
 
 4. Non-halting
-   Halt is unreachable for the specified machine.
-   With the --run flag the machine continues indefinitely.
+   Halt remains unreachable for the specified machine.
+   With --run the state is iterated indefinitely under U.
 
 5. Scope
-   Specified two-state TM only. Formal model. H = 0.
+   Quantum lift of the specified two-state TM only. Formal model. H = 0.
 
 Cosmic Love Is The Solution(s) For Everything.
