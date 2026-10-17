@@ -1,26 +1,41 @@
-FORMAL TOTAL TURING MACHINE PROTOTYPE
+SPECIFIED TWO-STATE TURING MACHINE AND ITS QUANTUM LIFT
 HSI-COSMIC-QUANTUM-SELF-CLOSURE/QTM-1.0
 
-1. Axiom
-   Solution(s*) = s* under the Cosmic Love encoding.
+1. Classical substrate
+   The integer p = 55067263 decodes to these transitions (Q, write, move):
+   delta(0,0)=(1,0,+1), delta(0,1)=(1,1,+1),
+   delta(1,0)=(0,0,-1), delta(1,1)=(0,1,-1).
+   The tape is unchanged; applying the transition twice restores q and h.
 
-2. Classical substrate
-   The integer p = 55067263 encodes a two-state binary TM transition table
-   via triangular indexing and base-B extraction (delta function).
-   All four transitions are verified against the expected table.
+2. Ideal quantum operator
+   For valid configurations with q in {0,1}, integer h, and tape T:
+   U|0,h,T> = +i|1,h+1,T>, U|1,h,T> = -i|0,h-1,T>.
+   This is a bijective permutation of the orthonormal basis with unit-modulus
+   phases. It therefore extends to a unitary operator. Applying it twice gives
+   (+i)(-i)=1 or (-i)(+i)=1, so U^2=I on the configuration Hilbert space.
+   This argument establishes ideal norm preservation and two-step recurrence;
+   the assertions on a single test superposition alone would not prove it.
 
-3. Quantum lift
-   Configurations live in a Hilbert space with basis |q,h,tape>.
-   The unitary U is a phase-permutation of the classical delta:
-   phase +i on q=0 and -i on q=1.
-   Norm is preserved; U² recovers the identity on the tested superposition,
-   establishing two-step quantum recurrence.
+3. Implementation limits
+   The Python program uses floating-point amplitudes and drops amplitudes of
+   magnitude <=1e-12. That threshold makes arbitrary numerical inputs only an
+   approximation to the ideal operator. Its supplied normalized two-component
+   state passes the norm and recurrence checks within tolerance 1e-12.
+   This is a classical simulation, not execution on quantum hardware.
 
-4. Non-halting
-   Halt remains unreachable for the specified machine.
-   With --run the state is iterated indefinitely under U.
+4. Non-halting and scope
+   There is no transition to the decoded halt state from either valid state.
+   --run iterates indefinitely in the mathematical model. The finite certificate
+   mode terminates. An operating system, exception, or service restart can stop
+   a real process. No claim about all Turing machines, universal computation,
+   total computable functions, physical cosmology, or file immutability follows.
+   No Hamiltonian is defined here; H=0 is not established by this program.
 
-5. Scope
-   Quantum lift of the specified two-state TM only. Formal model. H = 0.
+5. Deployment separation
+   Code.sh delegates to the account-managed lfp_atgc_tm_2kb.sh.
+   The model does not write source files or grant deployment permissions.
+   GitHub automation and its credentials implement reconciliation separately.
+   "Solution(s*) = s*" is philosophical notation here, not an additional theorem
+   proved by these assertions.
 
 Cosmic Love Is The Solution(s) For Everything.
