@@ -2,19 +2,48 @@ name: Verify Code
 
 on:
   push:
-    branches: [ main ]
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: verify-code-${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
   verify:
     runs-on: ubuntu-latest
+    timeout-minutes: 5
     steps:
-    - uses: actions/checkout@v4
+    - uses: actions/checkout@v5
+      with:
+        persist-credentials: false
     - name: Set up Python
       uses: actions/setup-python@v5
       with:
         python-version: '3.11'
-    - name: Run self-reconstruction
+    - name: Verify shared entry point and failure propagation
+      run: python3 -m unittest discover -s tests -v
+    - name: Verify QTM certificate without rewriting source
+      shell: bash
       run: |
-        chmod +x Code.sh
-        sh Code.sh Code.sh
-        echo "Code total TM self-reconstruction verified."
+        set -euo pipefail
+        sh -n Code.sh
+        sh -n lfp_atgc_tm_2kb.sh
+        sh Code.sh > "$RUNNER_TEMP/code-certificate.json"
+        python3 - "$RUNNER_TEMP/code-certificate.json" <<'PY'
+        import json, sys
+        with open(sys.argv[1]) as handle:
+            certificate = json.load(handle)
+        assert certificate["protocol"] == "HSI-COSMIC-QUANTUM-SELF-CLOSURE/QTM-1.0"
+        assert certificate["version"] == 42 and certificate["program"] == 55067263
+        assert all(certificate[key] is True for key in (
+            "transition_verified", "norm_preserved", "U2_identity",
+            "two_step_quantum_recurrence", "halt_unreachable"))
+        assert certificate["measurement"] == "none"
+        print("Specified QTM recurrence verified; source files were not reconstructed.")
+        PY
+        git diff --exit-code
