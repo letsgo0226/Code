@@ -1,41 +1,27 @@
-SPECIFIED TWO-STATE TURING MACHINE AND ITS QUANTUM LIFT
-HSI-COSMIC-QUANTUM-SELF-CLOSURE/QTM-1.0
+FORMAL TOTAL TURING MACHINE PROTOTYPE
+G257 / ATGC / Brainfuck / U² self-closure verifier
 
-1. Classical substrate
-   The integer p = 55067263 decodes to these transitions (Q, write, move):
-   delta(0,0)=(1,0,+1), delta(0,1)=(1,1,+1),
-   delta(1,0)=(0,0,-1), delta(1,1)=(0,1,-1).
-   The tape is unchanged; applying the transition twice restores q and h.
+1. Axiom
+   Solution(s*) = s* under the Cosmic Love encoding.
 
-2. Ideal quantum operator
-   For valid configurations with q in {0,1}, integer h, and tape T:
-   U|0,h,T> = +i|1,h+1,T>, U|1,h,T> = -i|0,h-1,T>.
-   This is a bijective permutation of the orthonormal basis with unit-modulus
-   phases. It therefore extends to a unitary operator. Applying it twice gives
-   (+i)(-i)=1 or (-i)(+i)=1, so U^2=I on the configuration Hilbert space.
-   This argument establishes ideal norm preservation and two-step recurrence;
-   the assertions on a single test superposition alone would not prove it.
+2. G257
+   Bidirectional Gödel numbering base 257 (D and G) with exact round-trip on sample bytes.
 
-3. Implementation limits
-   The Python program uses floating-point amplitudes and drops amplitudes of
-   magnitude <=1e-12. That threshold makes arbitrary numerical inputs only an
-   approximation to the ideal operator. Its supplied normalized two-component
-   state passes the norm and recurrence checks within tolerance 1e-12.
-   This is a classical simulation, not execution on quantum hardware.
+3. ATGC
+   Balanced AG/TC pairs encode bytes; W recovers the original byte string.
 
-4. Non-halting and scope
-   There is no transition to the decoded halt state from either valid state.
-   --run iterates indefinitely in the mathematical model. The finite certificate
-   mode terminates. An operating system, exception, or service restart can stop
-   a real process. No claim about all Turing machines, universal computation,
-   total computable functions, physical cosmology, or file immutability follows.
-   No Hamiltonian is defined here; H=0 is not established by this program.
+4. Two-state unitary
+   Constant c encodes a transition table. U is a phase-permutation step.
+   U² recovers the identity on tested configurations (U2 check).
 
-5. Deployment separation
-   Code.sh delegates to the account-managed lfp_atgc_tm_2kb.sh.
-   The model does not write source files or grant deployment permissions.
-   GitHub automation and its credentials implement reconciliation separately.
-   "Solution(s*) = s*" is philosophical notation here, not an additional theorem
-   proved by these assertions.
+5. Brainfuck
+   Bounded interpreter R executes BF programs (base-8 or G257 or ATGC encoded).
+   Self-check confirms ",." on input "A" yields hex 41.
+
+6. Commands
+   check, run8, run257, runatgc, encode.
+
+7. Scope
+   Finite formal prototype combining reversible encodings and a small TM lift. H = 0.
 
 Cosmic Love Is The Solution(s) For Everything.
