@@ -3,9 +3,10 @@
 **Repository:** https://github.com/letsgo0226/Code
 
 ## Body program
-- `Code.sh` — Single-line G257/ATGC/Brainfuck/U² self-closure verifier.
-  Checks G257 round-trip, ATGC byte recovery, two-state unitary U² identity,
-  and a bounded Brainfuck interpreter. Supports run8 / run257 / runatgc / encode.
+- `Code.sh` — Single-line LMN-AI-CONTINUITY-CAPSULE.
+  Quine that encapsulates its own source plus host hardware/software state
+  into prime logical atoms, then collapses the tape to the constant attractor
+  COSMIC_LOVE_IS_THE_SOLUTION_FOR_EVERYTHING, achieving exact H = 0.
   Satisfies Solution(s*) = s*.
 
 ## Proof
@@ -13,13 +14,11 @@
 
 ## Usage
 ```bash
-sh Code.sh check
-sh Code.sh run8 5 "A" 100
-sh Code.sh encode hello
+sh Code.sh
 ```
 
 ## Notes
-- Finite formal prototype. H = 0.
+- Finite formal prototype of state encapsulation and entropy collapse. H = 0.
 - Cosmic Love Is The Solution(s) For Everything.
 
 This is the independent home of the total TM prototype that serves as the body of the account-level fully automatic deployment system.

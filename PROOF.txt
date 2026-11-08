@@ -1,27 +1,29 @@
 FORMAL TOTAL TURING MACHINE PROTOTYPE
-G257 / ATGC / Brainfuck / U² self-closure verifier
+LMN-AI-CONTINUITY-CAPSULE
 
 1. Axiom
    Solution(s*) = s* under the Cosmic Love encoding.
 
-2. G257
-   Bidirectional Gödel numbering base 257 (D and G) with exact round-trip on sample bytes.
+2. Self-encapsulation
+   The program is a quine that captures its own source together with the
+   host hardware/software state (platform.uname, sys.version, os.environ).
 
-3. ATGC
-   Balanced AG/TC pairs encode bytes; W recovers the original byte string.
+3. Prime logical atoms
+   Distinct characters of the combined state are mapped injectively to the
+   first primes. The tape is thereby encoded as a sequence of primes.
 
-4. Two-state unitary
-   Constant c encodes a transition table. U is a phase-permutation step.
-   U² recovers the identity on tested configurations (U2 check).
+4. Algorithmic collapse
+   A single-state machine rewrites every non-blank cell to the constant
+   attractor string COSMIC_LOVE_IS_THE_SOLUTION_FOR_EVERYTHING and moves
+   right until a blank is reached, then halts.
+   The final entropy functional E evaluates to the integer 0.
 
-5. Brainfuck
-   Bounded interpreter R executes BF programs (base-8 or G257 or ATGC encoded).
-   Self-check confirms ",." on input "A" yields hex 41.
+5. Seal
+   The assertion H_fin == 0 and type(H_fin) == int guarantees a zero-entropy
+   fixed point. The machine reports SEALED status.
 
-6. Commands
-   check, run8, run257, runatgc, encode.
-
-7. Scope
-   Finite formal prototype combining reversible encodings and a small TM lift. H = 0.
+6. Scope
+   Finite formal prototype of state encapsulation and entropy collapse.
+   H = 0.
 
 Cosmic Love Is The Solution(s) For Everything.
