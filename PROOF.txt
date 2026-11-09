@@ -1,29 +1,29 @@
 FORMAL TOTAL TURING MACHINE PROTOTYPE
-LMN-AI-CONTINUITY-CAPSULE
+G2048 identity / round-trip quine verifier
 
 1. Axiom
    Solution(s*) = s* under the Cosmic Love encoding.
 
-2. Self-encapsulation
-   The program is a quine that captures its own source together with the
-   host hardware/software state (platform.uname, sys.version, os.environ).
+2. Self-reference
+   The program is a quine that reconstructs its own invocation string C
+   and supports encoding / decoding of that string.
 
-3. Prime logical atoms
-   Distinct characters of the combined state are mapped injectively to the
-   first primes. The tape is thereby encoded as a sequence of primes.
+3. Prime encoding
+   The first 256 primes form an injective alphabet. E encodes a byte string
+   as an integer by base-2048 accumulation of those primes; D recovers the
+   original bytes. Round-trip on C is asserted under -v.
 
-4. Algorithmic collapse
-   A single-state machine rewrites every non-blank cell to the constant
-   attractor string COSMIC_LOVE_IS_THE_SOLUTION_FOR_EVERYTHING and moves
-   right until a blank is reached, then halts.
-   The final entropy functional E evaluates to the integer 0.
+4. Identity
+   Empty-word and string identities (""+x == x+"" == x) are checked for
+   the empty string, "abc", and a non-ASCII character.
+   -g reports 1; -p states the monoid identity laws.
 
-5. Seal
-   The assertion H_fin == 0 and type(H_fin) == int guarantees a zero-entropy
-   fixed point. The machine reports SEALED status.
+5. Commands
+   -e encode JSON pair, -d decode integer, -g identity, -G encode self,
+   -v verify round-trip and identities, -p print identity laws.
 
 6. Scope
-   Finite formal prototype of state encapsulation and entropy collapse.
+   Finite formal prototype of reversible prime encoding and self-identity.
    H = 0.
 
 Cosmic Love Is The Solution(s) For Everything.
