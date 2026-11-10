@@ -1,5 +1,5 @@
 FORMAL TOTAL TURING MACHINE PROTOTYPE
-G23 prime-power blank-tape self-table-code verifier
+G26 prime-power + formal-log blank-tape self-table-code verifier
 
 1. Axiom
    Solution(s*) = s* under the Cosmic Love encoding.
@@ -8,19 +8,19 @@ G23 prime-power blank-tape self-table-code verifier
    A hexadecimal string expands to a bit string that encodes a complete
    finite transition table. Each 18-bit block specifies a transition.
 
-3. Blank-tape execution with prime-power arithmetic
+3. Blank-tape execution with dual exact tracks
    The machine runs on a blank tape. Every tape update is mirrored by
-   exact multiplication or division of a Gödel number G by the corresponding
-   prime power. State and head position are also encoded as prime powers
-   of 2 and 3 in the full configuration integer H.
+   exact prime-power arithmetic on the Gödel number G and by an additive
+   formal log l that records the same net change. State and head are
+   encoded as prime powers of 2 and 3 in the full configuration integer H.
 
-4. Self-reproduction and exact decode
+4. Self-reproduction and triple agreement
    On halt the tape contains exactly two copies of the original encoding.
-   The integer G is fully decoded back to the tape map and matches it.
-   No SHA is used; all arithmetic is exact prime-power.
+   Decoding G recovers the tape map, which is identical to both the final
+   tape t and the formal log l.
 
 5. Scope
-   Finite formal prototype of a self-table-code blank-tape TM with
-   exact numeric encoding. H = 0.
+   Finite formal prototype of a self-table-code blank-tape TM with exact
+   prime-power arithmetic and formal log. H = 0. No SHA.
 
 Cosmic Love Is The Solution(s) For Everything.
