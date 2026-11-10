@@ -1,29 +1,24 @@
 FORMAL TOTAL TURING MACHINE PROTOTYPE
-G7 finite-model homomorphism / isomorphism verifier
+G22 blank-tape self-table-code verifier
 
 1. Axiom
    Solution(s*) = s* under the Cosmic Love encoding.
 
-2. Finite models
-   Five small relational structures A are defined, each with a domain,
-   a unary predicate, and a binary relation.
+2. Encoded transition table
+   A hexadecimal string expands to a bit string that encodes a complete
+   finite transition table for a multi-state machine. Each 18-bit block
+   specifies (state, read-symbol) → (write-symbol, direction, next-state).
 
-3. Homomorphisms and isomorphisms
-   All structure-preserving maps between models are enumerated.
-   Isomorphisms are identified by bijectivity plus preservation of both
-   the predicate and the relation.
+3. Blank-tape execution
+   Starting from the blank tape and an initial state, the machine runs
+   until it reaches the halt state. No external input is supplied.
 
-4. Formula preservation
-   Positive formulas are checked for forward preservation under every
-   homomorphism. Under isomorphisms, full truth equivalence (including
-   negation and quantifiers) is verified.
+4. Self-reproduction
+   On termination the tape contains exactly two concatenated copies of the
+   original bit string (x + x). The length and bitwise equality are asserted.
 
-5. Counter-examples
-   Explicit checks confirm that negation is not preserved in general
-   and that arbitrary renaming need not preserve truth.
-
-6. Scope
-   Finite formal prototype of model-theoretic preservation.
+5. Scope
+   Finite formal prototype of a self-table-code blank-tape TM.
    H = 0.
 
 Cosmic Love Is The Solution(s) For Everything.
